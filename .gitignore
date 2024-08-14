@@ -1,3 +1,5 @@
 dbt_env
 logs
+test_project\logs\dbt.log
+
 

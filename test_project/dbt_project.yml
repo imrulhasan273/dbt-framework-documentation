@@ -12,6 +12,7 @@ profile: 'test_project'
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
 model-paths: ["models"]
+target-path: "target"
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
@@ -31,6 +32,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   test_project:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    # Default target schema for the project
+    +schema: dbt_dwh
+    staging:
+      +schema: public  # You can specify the source schema here if you're staging data
+
+
+
