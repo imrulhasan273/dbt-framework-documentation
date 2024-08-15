@@ -1,21 +1,18 @@
-
 version: 2
 
 models:
-  - name: inventory
-    description: "A starter dbt model"
+  - name: sales_inventory_distance_report
+    description: "Summary of records by Commute Distance"
     columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
+      - name: Customer Key
+        description: "Customer Id"
+      - name: record_count
+        description: "The number of records for each Customer Id."
+        tests:
+          - not_null
+      - name: transformed_on
+        description: "Data Transformation Time"
+        tests:
           - not_null
 
-  - name: inventory_dim
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
-        data_tests:
-          - unique
-          - not_null
+          

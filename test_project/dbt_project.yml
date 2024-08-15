@@ -33,9 +33,13 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   test_project:
     # Default target schema for the project
-    +schema: dbt_dwh
-    staging:
-      +schema: public  # You can specify the source schema here if you're staging data
+    +schema: dwh
+    # staging:
+    #   +schema: stg  # You can specify the source schema here if you're staging data
+  +on_schema_change: "sync_all_columns"
+  # +incremental_strategy: "merge"
+
+
 
 
 
