@@ -57,8 +57,10 @@ test_project:
       user: postgres
       password: IMRUL
       port: 5432
-      dbname: postgres
-      schema: iil
+      dbname: datacloud
+      schema: stg  # Source schema (default)
+      search_path: stg, dwh  # Search path to include both source and target schemas
+      threads: 4  # Number of parallel threads
 
 ```
 
@@ -78,6 +80,7 @@ dbt debug
 
 ```cmd
 dbt run
+dbt run --threads 4
 ```
 
 ---
