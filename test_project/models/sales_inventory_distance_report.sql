@@ -1,11 +1,3 @@
-
-/*
-    Welcome to your first dbt model!
-    Did you know that you can also configure models directly within SQL files?
-    This will override configurations stated in dbt_project.yml
-
-    Try changing "table" to "view" below
-*/
 /*** 
     materialized='incremental',  -- 'view', 'table', 'incremental', 'ephemeral'
     unique_key='inventory_id',   -- Assuming 'inventory_id' is unique
@@ -16,7 +8,7 @@
 {{ config(
     materialized='incremental',
     unique_key='"Customer Key"',
-) }}
+)}}
 
 {% set current_time = "CURRENT_TIMESTAMP" %}
 
@@ -26,7 +18,6 @@
         select max("Customer Key") as max_key
         from {{ this }}
     )
-    
     select 
         sd."Customer Key", 
         sd.record_count, 

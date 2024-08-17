@@ -14,5 +14,3 @@ models:
         description: "Data Transformation Time"
         tests:
           - not_null
-
-          
