@@ -105,9 +105,125 @@ dbt run --threads 4
 
 ---
 
-## DBT Architecture
+## **Core Concepts**
+
+### Models
 
 ---
+
+### Sources
+
+---
+
+### Seeds
+
+---
+
+### Snapshots
+
+---
+
+### Tests
+
+---
+
+### Jinja Macros
+
+---
+
+### Packages
+
+---
+
+## **Advanced Topics**
+
+### Materializations
+
+---
+
+### Deployment and Scheduling
+
+---
+
+### DBT Cloud
+
+---
+
+### Optimizing DBT Models
+
+---
+
+## **Best Practices**
+
+### Project Organization
+
+---
+
+### Version Control
+
+---
+
+### Testing and Debugging
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
