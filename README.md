@@ -2,7 +2,7 @@
 
 --- 
 
-### Set Up Virtual Environment
+## Set Up Environment
 
 ```cmd
 pip install virtualenvwrapper-win  
@@ -22,7 +22,6 @@ cd..
 **Step 1: Install dbt**
 
 ```cmd
-pip install dbt 
 pip install dbt-core
 ```
 
@@ -66,9 +65,30 @@ test_project:
 
 > Note: file is located in `C:\Users\imrul.hasan\.dbt` folder (`~/.dbt/`)
 
+**Step 5: Create new file in `macros`**
+
+- Adding macros to modify existing schema naming behavior [`generate_schema_name.sql`]
+
+```sql
+{% macro generate_schema_name(custom_schema_name, node) -%}
+
+    {%- set default_schema = target.schema -%}
+    {%- if custom_schema_name is none -%}
+
+        {{ default_schema }}
+
+    {%- else -%}
+
+        {{ custom_schema_name | trim }}
+
+    {%- endif -%}
+
+{%- endmacro %}
+```
+
 ---
 
-**Step 5: Debug**
+**Step 6: Debug**
 
 ```cmd
 dbt debug
@@ -76,7 +96,7 @@ dbt debug
 
 > make sure to `cd` to the Project Folder
 
-**Step 6: Run DBT Project**
+**Step 7: Run DBT Project**
 
 ```cmd
 dbt run
@@ -84,6 +104,17 @@ dbt run --threads 4
 ```
 
 ---
+
+## DBT Architecture
+
+---
+
+
+
+
+
+
+
 
 
 
