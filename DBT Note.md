@@ -87,6 +87,8 @@ test_project:
 
 **Step 7: Create .SQL file**
 
+> `sales_inventory_distance_report.sql`
+
 ```sql
 /*** 
     materialized='incremental',  -- 'view', 'table', 'incremental', 'ephemeral'
